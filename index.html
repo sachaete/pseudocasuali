@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+
+<style>
+em{
+background-color: yellow;
+}
+
+strong{
+color: red;
+}
+</style>
+</head>
+<body>
+
+<h1 id="title"></h1>
+<MARQUEE><h2 id="h2">ALGORITMO DI KNUTH</h2></MARQUEE>
+
+<p>Scegli il tuo <em>SEME</em> da cui iniziare: <input id="inizio" type="number"></p> <br> 
+
+<p>Da <strong>quanti</strong> numeri sarà composta la sequenza? <input id="sequenza" type="number"></p>
+
+<button id="bottone" onClick="esegui">CALCOLA LA SEQUENZA</button>
+
+<p>la sequenza è:</p>
+<div id="scritta"></div>
+
+
+<script>
+//
+var titolo = document.getElementById("title");
+console.log(titolo);
+titolo.style.backgroundColor = "green";
+titolo.style.textAlign = "center";
+titolo.innerHTML = "I NUMERI PSEUDOCASUALI";
+
+var sottotitolo = document.getElementById("h2");
+console.log(sottotitolo);
+sottotitolo.style.textAlign = "center";
+
+var width = document.getElementById("sequenza");
+var seq = document.getElementById("scritta");
+
+
+
+//Dal SEME si arriva a formare una sequenza di numeri pseudocasuali
+
+var x = document.getElementById("inizio");
+
+var a = 2;
+var b = 3;
+var c = 1;
+var m = 10;
+
+var N = 0
+
+// si calcola la funzione per determinare la sequenza
+
+function esegui() {
+for(var i=0; i<width.value; i++) {
+     N = (((a*(x.value)^2) + b*x.value) + c)%m;
+     seq.innerHTML +=  N + "";
+     x.value = N
+	}
+}
+
+</script>
+
+
+</body>
+</html>

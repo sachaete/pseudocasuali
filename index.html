@@ -7,7 +7,6 @@
 em{
 background-color: yellow;
 }
-
 strong{
 color: red;
 }
@@ -35,36 +34,29 @@ var titolo = document.getElementById("title");
 console.log(titolo);
 titolo.style.backgroundColor = "green";
 titolo.style.textAlign = "center";
+
+
+
 titolo.innerHTML = "I NUMERI PSEUDOCASUALI";
-
-
-
-var width = document.getElementById("sequenza").value;
+var width = document.getElementById("sequenza");
 var seq = document.getElementById("scritta");
 
-
-
 //Dal SEME si arriva a formare una sequenza di numeri pseudocasuali
-
-var x = document.getElementById("inizio").value;
-
+var x = document.getElementById("inizio");
 var a = 2;
 var b = 3;
 var c = 1;
 var m = 10;
-
-var N = 2
+var N = "x" + 1;
 
 // si calcola la funzione per determinare la sequenza
-
 function esegui() {
 for(var i=0; i<width.value; i++) {
-     N = (((a*x^2) + b*x) + c)%m;
+     N = (((a*(x.value)*(x.value)) + b*(x.value)) + c)%m;
      seq.innerHTML += N + " ";
 	x = N;
 	}
 }
-
 </script>
 
 
